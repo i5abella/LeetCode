@@ -1,0 +1,31 @@
+#include <vector>
+using namespace std;
+
+class Solution {
+public:
+    /**
+     * @param array source array
+     * @param target target to search
+     * @return the first occurrence position of target 
+     */
+    int binarySearch(vector<int> &array, int target) {
+        // write your code here
+        if ( array.size() == 0 )
+            return -1;
+        int left = 0,
+            right = array.size() - 1,
+            mid = ( left + right ) / 2;
+        while ( left < right )  {
+            if ( array[mid] == target )
+                return mid;
+            else if ( array[mid] < target )
+                left = mid;
+            else
+                right = mid;
+            mid = ( left + right ) / 2;
+        }
+        if ( array[start] == target)
+            return start;
+        return -1;
+    }
+};
